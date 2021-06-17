@@ -3,10 +3,14 @@ Description
 
 ``cplay`` is a minimalist music player with a textual user interface
 written in Python. It aims to provide a power-user-friendly interface
-with simple filelist and playlist control.
+with simple file list and playlist control.
 Instead of building an elaborate database of your music library,
 ``cplay`` allows you to quickly browse the filesystem and enqueue
 directories. Cue-files and other playlists are supported.
+
+The original cplay was started by Ulf Betlehem in 1998 and is no longer
+maintained. This is a fork that keeps the original design as much as possible.
+For a rewrite, see https://github.com/xi/cplay-ng
 
 .. image:: screenshot.png
    :alt: screenshot of cplay with file browser
@@ -14,7 +18,7 @@ directories. Cue-files and other playlists are supported.
 Requirements
 ------------
 
-- `Python 2.6+ <http://www.python.org/>`_
+- `Python 2.6+ or 3.3+ <http://www.python.org/>`_
 
 Music players supported (one of the first three provides support for most
 formats):
