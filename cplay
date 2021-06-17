@@ -1041,13 +1041,15 @@ class FilelistWindow(TagListWindow):
         self.listdir()
 
     def command_add_recursively(self):
-        l = self.get_tagged()
-        if not l:
-            APP.win_playlist.add(self.current().pathname)
-            self.cursor_move(1)
+        tagged = self.get_tagged()
+        if not tagged:
+            current = self.current()
+            if current is not None:
+                APP.win_playlist.add(current.pathname)
+                self.cursor_move(1)
             return
         APP.status('Adding tagged files', 1)
-        for entry in l:
+        for entry in tagged:
             APP.win_playlist.add(entry.pathname, quiet=True)
             entry.tagged = False
         self.update()
