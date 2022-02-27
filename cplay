@@ -1542,7 +1542,7 @@ class Player(object):
 
 
 class FrameOffsetPlayer(Player):
-    re_progress = re.compile(br'Time.*\s(\d+):(\d+).*\[(\d+):(\d+)')
+    re_progress = re.compile(br'(?:Time|\>).*\s(\d+):(\d+).*(?:\+|\[)(\d+):(\d+)')
 
     def parse_buf(self):
         match = self.re_progress.search(self.buf)
